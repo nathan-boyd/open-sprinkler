@@ -18,5 +18,7 @@ function startServer(err, app){
     server.listen(config.port);
 }
 
+exports.startServer = startServer;
+
 createApp(config, startServer);
 
