@@ -6,7 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var hello = require('./routes/hello')
+var theme = require('./routes/theme');
+var dashboard = require('./routes/dashboard');
 
 function createApp(config, callback) {
 
@@ -25,7 +26,8 @@ function createApp(config, callback) {
     app.use(express.static(path.join(__dirname, 'public')));
 
     app.use('/', routes);
-    app.use('/hello', hello);
+    app.use('/theme', theme);
+    app.use('/dashboard', dashboard);
 
     // catch 404 and forward to error handler
     app.use(function (req, res, next) {
